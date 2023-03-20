@@ -5,3 +5,9 @@ const $paginator = document.querySelector("#more-pokemons");
 
 const $start = document.querySelector("#start");
 const $types = document.querySelectorAll(".nav a");
+
+$start.onclick = () => {
+  handleInterface();
+  showPokemons();
+};
+
