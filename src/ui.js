@@ -81,3 +81,11 @@ function createCard(pokemon) {
   document.querySelector("#results").appendChild($card);
 }
 
+function handlePaginator(state) {
+  if (state) {
+    $paginator.classList.add("hidden");
+  } else {
+    $paginator.classList.remove("hidden");
+  }
+}
+
