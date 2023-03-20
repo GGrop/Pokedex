@@ -25,3 +25,9 @@ function handleInterface() {
   document.querySelector("#paginator").classList.remove("hidden");
 }
 
+export async function showPokemons(type) {
+  removePokemons();
+  await getPokemons(type);
+  showCards();
+  handlePaginator();
+}
