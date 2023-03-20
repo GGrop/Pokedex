@@ -11,3 +11,10 @@ $start.onclick = () => {
   showPokemons();
 };
 
+$types.forEach(($element) => {
+  $element.addEventListener("click", () => {
+    showPokemons($element.dataset.type);
+    page = 0;
+  });
+});
+
