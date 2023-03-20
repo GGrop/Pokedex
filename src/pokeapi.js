@@ -35,3 +35,8 @@ function getTypePokemons(type) {
     });
 }
 
+export function getCompletePokemons(pokemonId) {
+  return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
+    .then((response) => response.json())
+    .then((pokemon) => pokemon);
+}
