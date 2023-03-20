@@ -108,3 +108,15 @@ async function showCompletePokemons(event) {
   }
 }
 
+function handleLoading(showLoading) {
+  const $loading = document.querySelector("#loading");
+  if (showLoading) {
+    $loading.classList.remove("hidden");
+    handleBlockUser(1);
+    document.querySelector("#blackscreen").classList.remove("hidden");
+  } else {
+    $loading.classList.add("hidden");
+    handleBlockUser(0);
+  }
+}
+
