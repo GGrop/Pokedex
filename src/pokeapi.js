@@ -16,3 +16,10 @@ function addId(pokemons) {
   });
   sessionStorage.setItem('pokemons', JSON.stringify(pokemons));
 }
+
+function getAllPokemons() {
+  return fetch(`${URL}/pokemon?limit=1281`)
+    .then((r) => r.json())
+    .then((r) => r.results);
+}
+
