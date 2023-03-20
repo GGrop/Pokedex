@@ -9,3 +9,10 @@ export async function getPokemons(type = 'all') {
   }
   addId(pokemons);
 }
+function addId(pokemons) {
+  console.log(pokemons);
+  pokemons.forEach((e) => {
+    e.id = e.url.split('/')[6];
+  });
+  sessionStorage.setItem('pokemons', JSON.stringify(pokemons));
+}
