@@ -89,3 +89,8 @@ function handlePaginator(state) {
   }
 }
 
+$paginator.onclick = () => {
+  page++;
+  showCards();
+};
+
