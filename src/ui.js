@@ -94,3 +94,7 @@ $paginator.onclick = () => {
   showCards();
 };
 
+document.querySelector("#results").onclick = (event) => {
+  showCompletePokemons(event);
+};
+
