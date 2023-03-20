@@ -141,3 +141,15 @@ function createCompleteCard(pokemon) {
   addColorCard(pokemon);
   handleLoading(0);
 }
+function addContentCard(pokemon) {
+  const $Container = document.querySelector("#pokemon-modal");
+  const $Content = document.createElement("div");
+  $Content.id = "modal-content";
+  addName($Content, pokemon);
+  addImage($Content, pokemon);
+  addTypes($Content, pokemon);
+  addCaracterist($Content, pokemon);
+  addAbilities($Content, pokemon);
+  $Container.appendChild($Content);
+  $Container.classList.remove("hidden");
+}
