@@ -98,3 +98,13 @@ document.querySelector("#results").onclick = (event) => {
   showCompletePokemons(event);
 };
 
+async function showCompletePokemons(event) {
+  const $element = event.target;
+  console.log(event)
+  if ($element.id === "detail") {
+    let pokemonId = $element.parentNode.id;
+    handleLoading(1);
+    createCompleteCard(await getCompletePokemons(pokemonId));
+  }
+}
+
