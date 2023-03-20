@@ -38,3 +38,12 @@ function removePokemons() {
   });
 }
 
+function showCards() {
+  let pokemons = JSON.parse(sessionStorage.getItem("pokemons"));
+  let start = page * 20;
+  let end = (page + 1) * 20;
+  pokemons.slice(start, end).forEach((pokemon) => {
+    createCard(pokemon);
+  });
+}
+
