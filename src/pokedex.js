@@ -11,9 +11,10 @@ export async function showPokemons(pokemons, page) {
 }
 
 export default function initialization() {
-  getPokemons();
-  $start.onclick = () => {
+  handlePage();
+  getPokemonList();
+  $start.onclick = async () => {
     handleInterface();
-    // showPokemons();
+    showPokemons(await getPokemonList('all'), getPage());
   };
 }
