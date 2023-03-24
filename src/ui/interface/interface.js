@@ -9,3 +9,9 @@ export function handleInterface() {
   activeTypes();
 }
 
+export function removePokemons() {
+  const $cards = document.querySelectorAll('.card.my-card');
+  $cards.forEach(($card) => {
+    $card.remove();
+  });
+}
