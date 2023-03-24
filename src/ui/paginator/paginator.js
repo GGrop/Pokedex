@@ -20,3 +20,10 @@ $paginator.onclick = async () => {
   showPokemons(await getPokemonList(dataset.type), getPage());
 };
 
+export default function handlePaginator(state) {
+  if (state) {
+    $paginator.classList.add('hidden');
+  } else {
+    $paginator.classList.remove('hidden');
+  }
+}
