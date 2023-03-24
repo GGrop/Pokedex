@@ -14,3 +14,9 @@ export function handlePage(state = '') {
   }
 }
 
+$paginator.onclick = async () => {
+  const { dataset } = $paginator;
+  handlePage('+');
+  showPokemons(await getPokemonList(dataset.type), getPage());
+};
+
