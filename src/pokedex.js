@@ -6,6 +6,9 @@ import { handlePage } from './ui/paginator/paginator.js';
 
 const $start = document.querySelector('#start');
 
+export async function showPokemons(pokemons, page) {
+  showCards(pokemons, page);
+}
 
 export default function initialization() {
   getPokemons();
