@@ -1,5 +1,11 @@
 import handleLoading from '../loading/loading.js';
 
+function addName($modal, pokemon) {
+  const $pokemonName = document.createElement('p');
+  $pokemonName.textContent = pokemon.name;
+  $pokemonName.className = 'pokemon-name-modal';
+  $modal.appendChild($pokemonName);
+}
 function addImage($modal, pokemon) {
   const $pokemonImg = document.createElement('img');
   $pokemonImg.src = pokemon.sprites.front_default;
