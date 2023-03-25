@@ -1,3 +1,9 @@
+export function getPokemons() {
+  return fetch(`${URL}/pokemon?limit=1281`)
+    .then((r) => r.json())
+    .then((r) => r.results);
+}
+
 export function getTypePokemons(type) {
   return fetch(`${URL}/type/${type}/`)
     .then((r) => r.json())
