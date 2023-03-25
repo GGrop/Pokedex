@@ -1,3 +1,7 @@
+export function savePokemons(pokemons, key) {
+  localStorage.setItem(makeKey(key), JSON.stringify(pokemons));
+}
+
 export function getPokemons(type) {
   const pokemons = JSON.parse(localStorage.getItem(makeKey(type)));
   if (pokemons === null) {
