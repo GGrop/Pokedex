@@ -1,3 +1,7 @@
+function makeKey(key) {
+  return `pokemon-${key}`;
+}
+
 export function savePokemons(pokemons, key) {
   localStorage.setItem(makeKey(key), JSON.stringify(pokemons));
 }
