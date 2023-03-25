@@ -1,5 +1,17 @@
 import handleLoading from '../loading/loading.js';
 
+function addTypes($modal, pokemon) {
+  const $types = document.createElement('div');
+  $types.className = 'types-container-modal';
+
+  pokemon.types.forEach((type) => {
+    const $spanType = document.createElement('span');
+    $spanType.className = `type nav-type-${type.type.name}`;
+    $spanType.textContent = type.type.name;
+    $types.appendChild($spanType);
+  });
+  $modal.appendChild($types);
+}
 function addCharacteristics($modal, pokemon) {
   const $weight = document.createElement('span');
   $weight.textContent = `Weight: ${pokemon.weight / 10}kg`;
