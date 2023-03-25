@@ -1,5 +1,16 @@
 import handleLoading from '../loading/loading.js';
 
+function addCharacteristics($modal, pokemon) {
+  const $weight = document.createElement('span');
+  $weight.textContent = `Weight: ${pokemon.weight / 10}kg`;
+  $weight.className = 'info-span';
+  $modal.appendChild($weight);
+
+  const $height = document.createElement('span');
+  $height.textContent = `Height: ${pokemon.height / 10}m`;
+  $height.className = 'info-span';
+  $modal.appendChild($height);
+}
 function addAbilities($modal, pokemon) {
   const $abilitiesContainer = document.createElement('div');
   $abilitiesContainer.className = 'div-abitilities';
