@@ -1,5 +1,10 @@
 import handleLoading from '../loading/loading.js';
 
+function addColorCard(pokemon) {
+  const $Content = document.querySelector('#modal-content');
+  const mainType = pokemon.types[0].type.name;
+  $Content.classList.add(`type-${mainType}`);
+}
 function addName($modal, pokemon) {
   const $pokemonName = document.createElement('p');
   $pokemonName.textContent = pokemon.name;
