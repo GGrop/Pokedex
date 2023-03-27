@@ -5,6 +5,13 @@ import {
   savePokemons,
 } from '../storage/pokeStorage.js';
 
+function addId(pokemons, type) {
+  pokemons.forEach((e) => {
+    e.id = e.url.split('/')[6];
+  });
+  savePokemons(pokemons, type);
+}
+
 async function getPokemons(type) {
   let pokemons;
   try {
