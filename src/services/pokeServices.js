@@ -5,6 +5,20 @@ import {
   savePokemons,
 } from '../storage/pokeStorage.js';
 
+async function getPokemons(type) {
+  let pokemons;
+  try {
+    pokemons = getPokemonsStorage(type);
+  } catch (e) {
+    if (type === 'all') {
+      pokemons = await getPokemonsAPI();
+    } else {
+      pokemons = await getTypePokemonsAPI(type);
+    }
+  }
+  return pokemons;
+}
+
 export async function getPokemonList(type = 'all') {
   const pokemons = await getPokemons(type);
   addId(pokemons, type);
