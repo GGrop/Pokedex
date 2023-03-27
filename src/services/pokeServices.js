@@ -5,3 +5,13 @@ import {
   savePokemons,
 } from '../storage/pokeStorage.js';
 
+export async function getCompletePokemon(pokemonId) {
+  let pokemon;
+  try {
+    pokemon = await getCompletePokemonStorage(pokemonId);
+  } catch (e) {
+    pokemon = await getCompletePokemonAPI(pokemonId);
+    savePokemons(pokemon, pokemonId);
+  }
+  return pokemon;
+}
