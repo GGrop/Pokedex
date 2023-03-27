@@ -13,8 +13,7 @@ function handleBlockUser(blockUser) {
     };
   }
 }
-
-export default function handleLoading(showLoading) {
+export function handleLoading(showLoading) {
   const $loading = document.querySelector('#loading');
   if (showLoading) {
     $loading.classList.remove('hidden');
@@ -22,6 +21,18 @@ export default function handleLoading(showLoading) {
     document.querySelector('#blackscreen').classList.remove('hidden');
   } else {
     $loading.classList.add('hidden');
+    handleBlockUser(0);
+  }
+}
+export function handleLoadingGeneral(showLoading) {
+  const $loading = document.querySelector('#loading');
+  if (showLoading) {
+    $loading.classList.remove('hidden');
+    handleBlockUser(1);
+    document.querySelector('#blackscreen').classList.remove('hidden');
+  } else {
+    $loading.classList.add('hidden');
+    document.querySelector('#blackscreen').classList.add('hidden');
     handleBlockUser(0);
   }
 }
