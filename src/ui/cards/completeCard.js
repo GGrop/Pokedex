@@ -1,4 +1,4 @@
-import handleLoading from '../loading/loading.js';
+import { handleLoading } from '../loading/loading.js';
 
 function addColorCard(pokemon) {
   const $Content = document.querySelector('#modal-content');
