@@ -1,3 +1,3 @@
-import initialization from './pokedex.js';
+import { initialization } from './pokedex.js';
 
 initialization();
