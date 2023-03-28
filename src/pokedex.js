@@ -11,8 +11,6 @@ export async function showPokemons(pokemons, page) {
   showCards(pokemons, page);
 }
 
-export default function initialization() {
-  handlePage();
 $paginator.onclick = async () => {
   const { dataset } = $paginator;
   handlePage('+');
@@ -35,7 +33,11 @@ export default function activeTypes() {
   });
 }
 
+export function initialization() {
   getPokemonList();
+  handlePage();
+  activeTypes();
+
   $start.onclick = async () => {
     handleInterface();
     showPokemons(await getPokemonList('all'), getPage());
