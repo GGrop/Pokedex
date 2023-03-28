@@ -1,4 +1,3 @@
-import activeTypes from '../types/types.js';
 import handlePaginator from '../paginator/paginator.js';
 
 export function handleInterface() {
@@ -6,7 +5,6 @@ export function handleInterface() {
   document.querySelector('header').classList.remove('hidden');
   document.querySelector('#results').classList.remove('hidden');
   handlePaginator();
-  activeTypes();
 }
 
 export function removePokemons() {
