@@ -13,6 +13,12 @@ export async function showPokemons(pokemons, page) {
 
 export default function initialization() {
   handlePage();
+$paginator.onclick = async () => {
+  const { dataset } = $paginator;
+  handlePage('+');
+  showPokemons(await getPokemonList(dataset.type), getPage());
+};
+
   getPokemonList();
   $start.onclick = async () => {
     handleInterface();
