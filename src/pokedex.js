@@ -19,6 +19,22 @@ $paginator.onclick = async () => {
   showPokemons(await getPokemonList(dataset.type), getPage());
 };
 
+export default function activeTypes() {
+  const $types = document.querySelectorAll('.nav a');
+
+  $types.forEach(($element) => {
+    const { dataset } = $element;
+    $element.addEventListener('click', async () => {
+      handleLoadingGeneral(1);
+      $paginator.dataset.type = dataset.type;
+      removePokemons();
+      handlePage();
+      showPokemons(await getPokemonList(dataset.type), getPage());
+      handleLoadingGeneral(0);
+    });
+  });
+}
+
   getPokemonList();
   $start.onclick = async () => {
     handleInterface();
