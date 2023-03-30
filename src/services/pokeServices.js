@@ -13,14 +13,18 @@ function addId(pokemons, type) {
 }
 
 async function getPokemons(type) {
-  let pokemons;
+  let pokemons=[];
+  let pokemonsAuxiliar
   try {
     pokemons = getPokemonsStorage(type);
   } catch (e) {
     if (type === 'all') {
       pokemons = await getPokemonsAPI();
     } else {
-      pokemons = await getTypePokemonsAPI(type);
+      pokemonsAuxiliar = await getTypePokemonsAPI(type);
+      pokemonsAuxiliar.forEach((pokemon)=>{
+        pokemons.push(pokemon.pokemon)
+      })
     }
   }
   return pokemons;
