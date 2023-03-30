@@ -1,7 +1,7 @@
 const URL = 'https://pokeapi.co/api/v2';
 
 export function getCompletePokemon(pokemonId) {
-  return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
+  return fetch(`${URL}/pokemon/${pokemonId}`)
     .then((response) => response.json())
     .then((pokemon) => pokemon);
 }
