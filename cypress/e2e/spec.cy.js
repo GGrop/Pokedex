@@ -20,6 +20,11 @@ context("Pokedex", () => {
     let count=3
     usePaginator(count)
   })
+  it('start and use much the paginator and choose a far pokemon',()=>{
+    let count=15
+    usePaginator(count)
+    expectAPokemon(300,'skitty')
+  })
     cy.get(':nth-child(1) > #detail').click()
 
   })
