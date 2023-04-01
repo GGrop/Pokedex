@@ -46,3 +46,8 @@ function usePaginator(count=0){
   cy.get('.my-card').should("have.length",20+20*count)
 }
 
+function expectAPokemon(chillPosition,name){
+  cy.get(`:nth-child(${chillPosition}) > #detail`).click()
+  cy.get('.pokemon-name-modal').should('have.text', name)
+}
+
