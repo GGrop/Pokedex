@@ -6,7 +6,6 @@ import {
 
 const URL = "https://pokeapi.co/api/v2";
 const pokemonId = 2;
-const pokemonLimit = 1281;
 const type = "fire";
 beforeEach(() => {
   global.fetch = jest.fn();
