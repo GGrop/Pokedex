@@ -1,4 +1,4 @@
-const URL = 'https://pokeapi.co/api/v2';
+const URL = "https://pokeapi.co/api/v2";
 
 export function getCompletePokemon(pokemonId) {
   return fetch(`${URL}/pokemon/${pokemonId}`)

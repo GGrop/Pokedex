@@ -1,11 +1,11 @@
-import { handleInterface, removePokemons } from './ui/interface/interface.js';
-import { getPokemonList } from './services/pokeServices.js';
-import showCards from './ui/cards/card.js';
-import { getPage } from './storage/pokeStorage.js';
-import { handlePage, $paginator } from './ui/paginator/paginator.js';
-import { handleLoadingGeneral } from './ui/loading/loading.js';
+import { handleInterface, removePokemons } from "./ui/interface/interface.js";
+import { getPokemonList } from "./services/pokeServices.js";
+import showCards from "./ui/cards/card.js";
+import { getPage } from "./storage/pokeStorage.js";
+import { handlePage, $paginator } from "./ui/paginator/paginator.js";
+import { handleLoadingGeneral } from "./ui/loading/loading.js";
 
-const $start = document.querySelector('#start');
+const $start = document.querySelector("#start");
 
 export async function showPokemons(pokemons, page) {
   showCards(pokemons, page);
@@ -13,16 +13,16 @@ export async function showPokemons(pokemons, page) {
 
 $paginator.onclick = async () => {
   const { dataset } = $paginator;
-  handlePage('+');
+  handlePage("+");
   showPokemons(await getPokemonList(dataset.type), getPage());
 };
 
 export default function activeTypes() {
-  const $types = document.querySelectorAll('.nav a');
+  const $types = document.querySelectorAll(".nav a");
 
   $types.forEach(($element) => {
     const { dataset } = $element;
-    $element.addEventListener('click', async () => {
+    $element.addEventListener("click", async () => {
       handleLoadingGeneral(1);
       $paginator.dataset.type = dataset.type;
       removePokemons();
@@ -40,6 +40,6 @@ export function initialization() {
 
   $start.onclick = async () => {
     handleInterface();
-    showPokemons(await getPokemonList('all'), getPage());
+    showPokemons(await getPokemonList("all"), getPage());
   };
 }

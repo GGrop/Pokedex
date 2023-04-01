@@ -1,38 +1,38 @@
 function handleBlockUser(blockUser) {
   if (blockUser) {
-    document.querySelector('#blackscreen').onclick = () => {};
+    document.querySelector("#blackscreen").onclick = () => {};
   } else {
-    document.querySelector('#blackscreen').onclick = () => {
-      document.querySelector('#pokemon-modal');
-      const $blackScreen = document.querySelector('#blackscreen');
-      $blackScreen.classList.add('hidden');
-      const $modalContent = document.querySelector('#modal-content');
-      const $modal = document.querySelector('#pokemon-modal');
+    document.querySelector("#blackscreen").onclick = () => {
+      document.querySelector("#pokemon-modal");
+      const $blackScreen = document.querySelector("#blackscreen");
+      $blackScreen.classList.add("hidden");
+      const $modalContent = document.querySelector("#modal-content");
+      const $modal = document.querySelector("#pokemon-modal");
       $modalContent.remove();
-      $modal.classList.add('hidden');
+      $modal.classList.add("hidden");
     };
   }
 }
 export function handleLoading(showLoading) {
-  const $loading = document.querySelector('#loading');
+  const $loading = document.querySelector("#loading");
   if (showLoading) {
-    $loading.classList.remove('hidden');
+    $loading.classList.remove("hidden");
     handleBlockUser(1);
-    document.querySelector('#blackscreen').classList.remove('hidden');
+    document.querySelector("#blackscreen").classList.remove("hidden");
   } else {
-    $loading.classList.add('hidden');
+    $loading.classList.add("hidden");
     handleBlockUser(0);
   }
 }
 export function handleLoadingGeneral(showLoading) {
-  const $loading = document.querySelector('#loading');
+  const $loading = document.querySelector("#loading");
   if (showLoading) {
-    $loading.classList.remove('hidden');
+    $loading.classList.remove("hidden");
     handleBlockUser(1);
-    document.querySelector('#blackscreen').classList.remove('hidden');
+    document.querySelector("#blackscreen").classList.remove("hidden");
   } else {
-    $loading.classList.add('hidden');
-    document.querySelector('#blackscreen').classList.add('hidden');
+    $loading.classList.add("hidden");
+    document.querySelector("#blackscreen").classList.add("hidden");
     handleBlockUser(0);
   }
 }

@@ -1,8 +1,8 @@
-import { savePage, getPage } from '../../storage/pokeStorage.js';
+import { savePage, getPage } from "../../storage/pokeStorage.js";
 
-export const $paginator = document.querySelector('#paginator');
+export const $paginator = document.querySelector("#paginator");
 
-export function handlePage(state = '') {
+export function handlePage(state = "") {
   if (!state) {
     savePage(0);
   } else {
@@ -14,8 +14,8 @@ export function handlePage(state = '') {
 
 export default function handlePaginator(state) {
   if (state) {
-    $paginator.classList.add('hidden');
+    $paginator.classList.add("hidden");
   } else {
-    $paginator.classList.remove('hidden');
+    $paginator.classList.remove("hidden");
   }
 }

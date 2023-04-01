@@ -13496,4 +13496,4 @@ export default `{
       }
   ],
   "weight": 855
-}`
+}`;
