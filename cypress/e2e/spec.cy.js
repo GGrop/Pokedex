@@ -25,6 +25,13 @@ context("Pokedex", () => {
     usePaginator(count)
     expectAPokemon(300,'skitty')
   })
+  it('start and use the paginator and change the type and choose one pokemon',()=>{
+    let count=3
+    usePaginator(count)
+    cy.get('.nav-type-fire').click()
+    expectAPokemon(1,'charmander')
+    usePaginator()
+  })
     cy.get(':nth-child(1) > #detail').click()
 
   })
