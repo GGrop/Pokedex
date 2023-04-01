@@ -32,7 +32,10 @@ context("Pokedex", () => {
     expectAPokemon(1,'charmander')
     usePaginator()
   })
+  it('start and spec a loading',()=>{
     cy.get(':nth-child(1) > #detail').click()
-
+    cy.get('#loading').should('not.have.class', 'hidden')
+    cy.get('.pokemon-name-modal').should('have.text', 'bulbasaur')
+    cy.get('#loading').should('have.class', 'hidden')
   })
 });
