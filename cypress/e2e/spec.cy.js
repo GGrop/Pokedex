@@ -39,3 +39,10 @@ context("Pokedex", () => {
     cy.get('#loading').should('have.class', 'hidden')
   })
 });
+function usePaginator(count=0){
+  for(let i=0; i<count;i++){
+    cy.get('#more-pokemons').click()
+  }
+  cy.get('.my-card').should("have.length",20+20*count)
+}
+
