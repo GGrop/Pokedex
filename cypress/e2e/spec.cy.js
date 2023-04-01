@@ -1,3 +1,4 @@
+/// <reference types= "cypress" />
 const URL = "http://localhost:8000/";
 
 context("MemoTest", () => {
