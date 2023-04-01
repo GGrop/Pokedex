@@ -8,8 +8,11 @@ context("Pokedex", () => {
     cy.get('.my-card').should("have.length",20)
   });
 
-  it('start and choose, some pokemons',()=>{
-    cy.get('#start').click()
+  it('start and choose, two pokemons',()=>{
+    expectAPokemon(1,'bulbasaur')
+    skipModal()
+    expectAPokemon(20,'raticate')
+  })
     cy.get(':nth-child(1) > #detail').click()
 
   })
