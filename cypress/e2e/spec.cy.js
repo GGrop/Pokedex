@@ -51,3 +51,8 @@ function expectAPokemon(chillPosition,name){
   cy.get('.pokemon-name-modal').should('have.text', name)
 }
 
+function skipModal(){
+  cy.get('#blackscreen').should('not.have.class', 'hidden')
+  cy.get('#blackscreen').click({ force: true })
+  cy.get('#blackscreen').should('have.class', 'hidden')
+}
