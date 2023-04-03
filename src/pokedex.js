@@ -8,7 +8,7 @@ import { handleLoadingGeneral } from "./ui/loading/loading.js";
 const $start = document.querySelector("#start");
 
 export async function showPokemons(pokemons, page) {
-  showCards(pokemons, page);
+  showCards(pokemons.pokemons, page);
 }
 
 $paginator.onclick = async () => {
