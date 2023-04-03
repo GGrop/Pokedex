@@ -1,4 +1,10 @@
 import {
+  mapPokemon,
+  mapPokemonList,
+  mapPokemonTypeList,
+} from "../entities_maps/maps.js";
+
+import {
   getPokemons as getPokemonsAPI,
   getCompletePokemon as getCompletePokemonAPI,
   getTypePokemons as getTypePokemonsAPI,
@@ -9,26 +15,22 @@ import {
   savePokemons,
 } from "../storage/pokeStorage.js";
 
-function addId(pokemons, type) {
-  pokemons.forEach((e) => {
-    e.id = e.url.split("/")[6];
-  });
-  savePokemons(pokemons, type);
-}
-
 async function getPokemons(type) {
   let pokemons = [];
-  let pokemonsAuxiliar;
+  let auxPokemons = [];
+  let pokemonsData;
   try {
     pokemons = getPokemonsStorage(type);
   } catch (e) {
     if (type === "all") {
-      pokemons = await getPokemonsAPI();
+      pokemonsData = await getPokemonsAPI();
+      pokemons = mapPokemonList(pokemonsData);
     } else {
-      pokemonsAuxiliar = await getTypePokemonsAPI(type);
-      pokemonsAuxiliar.forEach((pokemon) => {
-        pokemons.push(pokemon.pokemon);
+      pokemonsData = await getTypePokemonsAPI(type);
+      pokemonsData.forEach((pokemon) => {
+        auxPokemons.push(pokemon.pokemon);
       });
+      pokemons = mapPokemonTypeList(auxPokemons);
     }
   }
   return pokemons;
@@ -36,7 +38,6 @@ async function getPokemons(type) {
 
 export async function getPokemonList(type = "all") {
   const pokemons = await getPokemons(type);
-  addId(pokemons, type);
   return pokemons;
 }
 
@@ -45,7 +46,8 @@ export async function getCompletePokemon(pokemonId) {
   try {
     pokemon = await getCompletePokemonStorage(pokemonId);
   } catch (e) {
-    pokemon = await getCompletePokemonAPI(pokemonId);
+    let pokemonData = await getCompletePokemonAPI(pokemonId);
+    pokemon = mapPokemon(pokemonData);
     savePokemons(pokemon, pokemonId);
   }
   return pokemon;
