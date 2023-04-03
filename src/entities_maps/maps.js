@@ -33,3 +33,11 @@ export function mapPokemonList(pokemonData) {
   );
 }
 
+export function mapPokemonTypeList(pokemonTypeData) {
+  addId(pokemonTypeData);
+  const total = pokemonTypeData.length;
+  return new PokemonList(
+    total,
+    pokemonTypeData.map((pokemon) => pokemon)
+  );
+}
