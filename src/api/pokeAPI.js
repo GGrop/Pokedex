@@ -1,15 +1,11 @@
 const URL = "https://pokeapi.co/api/v2";
 
-export function getCompletePokemon(pokemonId) {
-  return fetch(`${URL}/pokemon/${pokemonId}`)
-    .then((response) => response.json())
-    .then((pokemon) => pokemon);
+export async function getCompletePokemon(pokemonId) {
+  return (await fetch(`${URL}/pokemon/${pokemonId}`)).json();
 }
 
-export function getPokemons() {
-  return fetch(`${URL}/pokemon?limit=1281`)
-    .then((r) => r.json())
-    .then((r) => r.results);
+export async function getPokemons() {
+  return (await fetch(`${URL}/pokemon?limit=1281`)).json();
 }
 
 export function getTypePokemons(type) {
