@@ -23,3 +23,13 @@ export function mapPokemon(pokemonData) {
   );
 }
 
+export function mapPokemonList(pokemonData) {
+  addId(pokemonData.results);
+  const { count: total, results } = pokemonData;
+
+  return new PokemonList(
+    total,
+    results.map((pokemon) => pokemon)
+  );
+}
+
