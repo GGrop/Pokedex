@@ -23,6 +23,16 @@ export function mapPokemon(pokemonData) {
   );
 }
 
+function addId(pokemons) {
+  pokemons.forEach((e) => {
+    if (e.pokemon) {
+      e.pokemon.id = e.pokemon.url.split("/")[6];
+    } else {
+      e.id = e.url.split("/")[6];
+    }
+  });
+}
+
 export function mapPokemonList(pokemonData) {
   addId(pokemonData.results);
   const { count: total, results } = pokemonData;
