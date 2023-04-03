@@ -2,7 +2,7 @@ import { handleLoading } from "../loading/loading.js";
 
 function addColorCard(pokemon) {
   const $Content = document.querySelector("#modal-content");
-  const mainType = pokemon.types[0].type.name;
+  const mainType = pokemon.types[0];
   $Content.classList.add(`type-${mainType}`);
 }
 function addName($modal, pokemon) {
@@ -13,7 +13,7 @@ function addName($modal, pokemon) {
 }
 function addImage($modal, pokemon) {
   const $pokemonImg = document.createElement("img");
-  $pokemonImg.src = pokemon.sprites.front_default;
+  $pokemonImg.src = pokemon.sprite;
   $pokemonImg.className = "pokemon-img-modal";
   $modal.appendChild($pokemonImg);
 }
@@ -23,8 +23,8 @@ function addTypes($modal, pokemon) {
 
   pokemon.types.forEach((type) => {
     const $spanType = document.createElement("span");
-    $spanType.className = `type nav-type-${type.type.name}`;
-    $spanType.textContent = type.type.name;
+    $spanType.className = `type nav-type-${type}`;
+    $spanType.textContent = type;
     $types.appendChild($spanType);
   });
   $modal.appendChild($types);
@@ -52,7 +52,7 @@ function addAbilities($modal, pokemon) {
 
   pokemon.abilities.forEach((ability) => {
     const $ability = document.createElement("span");
-    $ability.textContent = `- ${ability.ability.name}`;
+    $ability.textContent = `- ${ability}`;
     $ability.className = "info-span";
     $abilitiesContainer.appendChild($ability);
   });
