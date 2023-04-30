@@ -20,6 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 15px;
 }
 .title {
   font-size: 400%;
@@ -30,7 +31,7 @@ body {
 #results {
   display: flex;
   flex-wrap: wrap;
-  width: 45%;
+  width: 55%;
   margin: auto;
   justify-content: center;
 }
@@ -39,13 +40,13 @@ body {
   align-items: center;
   user-select: none;
   margin: 5px;
-  width: 17% !important;
+  width: 18% !important;
   min-height: 200px !important;
   border-radius: 0.6rem !important;
 }
 .card-name {
   margin: auto;
-  font-size: 0.5vw;
+  font-size: 0.7vw;
 }
 .my-card-img {
   width: 80% !important;
@@ -93,12 +94,12 @@ body {
 }
 .type {
   border-style: solid none;
-  border-width: 3px;
-  border-radius: 10px;
+  border-width: 2.5px;
+  border-radius: 7px;
   padding: 0.15em 0.5em !important;
   margin: 2px;
   font-variant: small-caps;
-  font-size: 1vw !important;
+  font-size: 0.7vw !important;
   color: #f8f8f8 !important;
   text-shadow: 0 1px 1px #807870;
 }
