@@ -1,4 +1,5 @@
-![small-pokeball-icon-4](https://user-images.githubusercontent.com/88691772/235657839-ae557538-a043-47b2-8727-6aa7342ed481.jpg)
+![Artboard22](https://user-images.githubusercontent.com/88691772/235658605-80af9f9a-4f60-4ea8-ac36-a7355ff2cf80.png)
+
 
 # Pokedex
 
