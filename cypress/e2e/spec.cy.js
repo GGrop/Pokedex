@@ -23,7 +23,7 @@ context("Pokedex", () => {
   it('start and use much the paginator and choose a far pokemon',()=>{
     let count=15
     usePaginator(count)
-    expectAPokemon(300,'skitty')
+    expectAPokemon(300,'wailmer')
   })
   it('start and use the paginator and change the type and choose one pokemon',()=>{
     let count=3
